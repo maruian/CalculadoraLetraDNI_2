@@ -3,24 +3,25 @@ package Ventana;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 
 /*
  * By Paco Gomez
- * Esta ventana tendrá dos JTextFields
- * El primero recojerá el DNI
- * El segundo calculará la letra al apretar el botón
+ * Esta ventana tendrï¿½ dos JTextFields
+ * El primero recojerï¿½ el DNI
+ * El segundo calcularï¿½ la letra al apretar el botï¿½n
  * 
  * */
 public class VentanaLetraDNI extends JFrame {
 
 	private JPanel contentPane;
-
-
-
 	/**
 	 * Create the frame.
 	 */
@@ -31,6 +32,18 @@ public class VentanaLetraDNI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
+		JLabel lblPideDNI = new JLabel("Introduce DNI:");
+		JTextField txtDNI = new JTextField();
+		JLabel lblResult = new JLabel("Letra DNI calculada:");
+		JTextField txtLetra = new JTextField();
+		txtLetra.setEditable(false);
+		JButton btnCalcular = new JButton("Calcular");
+		contentPane.add(lblPideDNI);
+		contentPane.add(txtDNI);
+		contentPane.add(lblResult);
+		contentPane.add(txtLetra);
+		contentPane.add(btnCalcular);
 	}
 
 }
